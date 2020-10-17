@@ -10,11 +10,11 @@
 html {
   background-color: #fff;
   color: #555;
-  font-family: "Lato", "Arial", sans-serif;
+  font-family: 'Lato', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 .row {
@@ -24,81 +24,9 @@ html {
 ul {
   list-style: none;
 }
-/* ------------------------------ */
-/*  -----------Header------------- */
-/* ------------------------------- */
-.logo {
-  height: 100px;
-  width: auto;
-  float: left;
-  margin-top: 20px;
-}
-.main-nav {
-  float: right;
-  margin-top: 40px;
-}
-.main-nav:after {
-  clear: both;
-}
-
-.main-nav li {
-  display: inline-block;
-  margin-left: 40px;
-}
-.main-nav li a:link,
-.main-nav li a:visited {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  /* border-bottom: 2px solid transparent; */
-  /* transition: border-bottom 0.2s; */
-  position: relative;
-  /*the only reason its there is because of transition. if u except it the transition will like breaking */
-  /* i latter abandoned that way an implemented a new style */
-}
-.main-nav li a:link:before,
-.main-nav li a:visited:before {
-  position: absolute;
-  border-bottom: 2px solid var(--c1);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-  overflow: hidden;
-  transition: left 0.4s, right 0.4s;
-  content: "";
-}
-.main-nav li a:hover:before,
-.main-nav li a:active::before {
-  left: 0;
-  right: 0;
-}
-
-/* .main-nav li a:hover,
-.main-nav li a:active {
- border-bottom: 2px solid var(--c1);
-} */
-
-header {
-  background: linear-gradient(rgba(10, 10, 10, 0.87), rgba(10, 10, 10, 0.856)),
-    url(../images/hero.jpg);
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.hero-text-box {
-  position: absolute;
-  width: 1140px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-section {
+/* section {
   padding: 80px 0;
-}
+} */
 h2,
 h3 {
   text-transform: uppercase;
@@ -116,7 +44,7 @@ h2:after {
   display: block;
   height: 2px;
   background-color: #e67e22;
-  content: "";
+  content: '';
   width: 100px;
   margin: 0 auto;
   margin-top: 30px;
@@ -168,7 +96,7 @@ h1 {
   z-index: -1;
   background-color: #f3be2e;
   transition: bottom 0.2s;
-  content: "";
+  content: '';
 }
 
 .__flex {
@@ -199,6 +127,7 @@ h1 {
   line-height: 145%;
   width: 70%;
   margin-left: 15%;
+  text-align: justify;
 }
 
 .icon-big {
@@ -208,11 +137,154 @@ h1 {
   text-align: center;
   margin-bottom: 10px;
 }
+@media (max-width: 575.98px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  html {
+    font-size: 18px;
+  }
+}
+/* ------------------------------ */
+/*  -----------Header------------- */
+/* ------------------------------- */
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+.main-nav {
+  float: right;
+  margin-top: 40px;
+}
+.main-nav:after {
+  clear: both;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  /* border-bottom: 2px solid transparent; */
+  /* transition: border-bottom 0.2s; */
+  position: relative;
+  /*the only reason its there is because of transition. if u except it the transition will like breaking */
+  /* i latter abandoned that way an implemented a new style */
+}
+.main-nav li a:link:before,
+.main-nav li a:visited:before {
+  position: absolute;
+  border-bottom: 2px solid var(--c1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  overflow: hidden;
+  transition: left 0.4s, right 0.4s;
+  content: '';
+}
+.main-nav li a:hover:before,
+.main-nav li a:active::before {
+  left: 0;
+  right: 0;
+}
+
+/* .main-nav li a:hover,
+.main-nav li a:active {
+ border-bottom: 2px solid var(--c1);
+} */
+
+header {
+  background: linear-gradient(rgba(10, 10, 10, 0.87), rgba(10, 10, 10, 0.856)),
+    url(../images/hero.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.hero-text-box {
+  position: absolute;
+  max-width: 1140px;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .logo {
+    height: 60px;
+    padding-left: 10px;
+  }
+  .hero-text-box {
+    position: absolute;
+    width: 90%;
+    top: 35%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+  }
+  /* .hero-text-box h1 {
+    font-size: 30px;
+  } */
+  .__1-2 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+  }
+  /* .steps-box:first-child {
+    text-align: center;
+  } */
+  .main-nav {
+    display: none;
+  }
+  header {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-text-box {
+    position: absolute;
+    width: 90%;
+    top: 35%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+  }
+  header {
+    height: 70vh;
+  }
+  .logo {
+    height: 60px;
+    padding-left: 10px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Section features */
+.section-features {
+  padding: 20px 0;
+}
 
 .section-features .long-copy {
   margin-bottom: 30px;
 }
+.section-features .__1-4 p {
+  text-align: justify;
+}
 
+/* Section Meals */
 .section-meals {
   padding: 0;
 }
@@ -247,10 +319,17 @@ h1 {
   opacity: 1;
   transform: scale(1.03);
 }
-
+@media (max-width: 575.98px) {
+  .meal-showcase li {
+    width: 50%;
+  }
+}
+/* ***************** */
 /* Section 3 or Steps */
+/* ***************** */
 .section-steps {
   background-color: #f4f4f4;
+  padding: 40px 0;
 }
 .steps-box {
   margin-top: 30px;
@@ -283,7 +362,7 @@ h1 {
   height: 55px;
   width: 55px;
   border-radius: 50px;
-  padding: 5px;
+  padding: 10px 5px;
   font-size: 1.5em;
   text-align: center;
   margin-right: 25px;
@@ -301,14 +380,37 @@ h1 {
 }
 
 .clearfix:after {
-  content: ".";
+  content: '.';
   clear: both;
   display: block;
   height: 0;
   visibility: hidden;
 }
-
+@media (max-width: 575.98px) {
+  .section-steps {
+    padding: 10px;
+  }
+  .section-steps div:nth-of-type(2) .__flex {
+    justify-content: center;
+  }
+  .section-steps div:nth-of-type(2) .__flex .steps-box {
+    text-align: unset;
+    padding: 0;
+  }
+  .app-screen {
+    width: 100%;
+  }
+  .btn-app img {
+    width: 45%;
+    height: 40px;
+  }
+}
+/* ***************** */
 /* section 4 cities */
+/* ***************** */
+.section-cities {
+  padding: 40px 0;
+}
 .city img {
   width: 100%;
   height: auto;
@@ -346,8 +448,9 @@ h1 {
   color: blue;
   border-bottom: 1px solid transparent;
 }
-
+/* ***************** */
 /* section testimonial */
+/* ***************** */
 .section-testimonials {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(../images/back-customers.jpg);
@@ -356,6 +459,7 @@ h1 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #fff;
+  padding: 40px 0;
 }
 blockquote {
   font-style: italic;
@@ -371,7 +475,7 @@ blockquote img {
   margin-right: 10px;
 }
 blockquote:before {
-  content: "\201C";
+  content: '\201C';
   display: block;
   font-size: 500%;
   position: absolute;
@@ -383,10 +487,12 @@ cite {
   margin-top: 25px;
   display: block;
 }
-
+/* ***************** */
 /* section plans */
+/* ***************** */
 .section-plans {
   background-color: #f4f4f4;
+  padding: 40px 0;
 }
 
 .plan-box {
@@ -441,8 +547,21 @@ cite {
 .plan-price-meal {
   font-weight: 400;
 }
-
+@media (max-width: 575.98px) {
+  .section-plans div:nth-of-type(2) {
+    justify-content: center;
+  }
+  .section-plans div:nth-of-type(2) .plan-box {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+/* ***************** */
 /* form */
+/* ***************** */
+.section-form {
+  padding-top: 40px;
+}
 .map-form {
   position: relative;
   max-width: 100%;
@@ -465,8 +584,8 @@ cite {
   top: 50px;
   right: 5%;
 }
-.contact-form input[type="text"],
-.contact-form input[type="email"],
+.contact-form input[type='text'],
+.contact-form input[type='email'],
 select,
 textarea {
   padding: 6px;
@@ -489,18 +608,45 @@ textarea {
 textarea {
   height: 100px;
 }
-.contact-form input[type="submit"] {
+.contact-form input[type='submit'] {
   color: black;
   border: none;
 }
-.contact-form input[type="checkbox"] {
+.contact-form input[type='checkbox'] {
   margin: 10px 5px 10px 0;
 }
-
+.contact-form .__2-form .btn {
+  width: 100%;
+  margin-left: 0;
+}
 *:focus {
   outline: none;
 }
+@media (max-width: 575.98px) {
+  .form-absolute {
+    position: unset;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+  }
+  .contact-form {
+    background-color: #fff;
+  }
+  .section-form {
+    padding: 0;
+  }
+  .contact-form .__2-form {
+    flex-basis: 100%;
+  }
+  .contact-form .__2-form .btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* ***************** */
 /* footer */
+/* ***************** */
+
 footer {
   background-color: #333;
   padding: 50px;
@@ -578,49 +724,7 @@ footer p {
   margin-top: 20px;
 }
 
-@media only screen and (max-width: 1200px) {
-}
-@media only screen and (max-width: 1023px) {
-}
-@media only screen and (max-width: 767px) {
-  .logo {
-    height: 60px;
-    padding-left: 10px;
-  }
-  .hero-text-box {
-    display: none;
-  }
-  .__1-2 {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 300px;
-    flex: 0 0 300px;
-  }
-  .steps-box:first-child {
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 480px) {
-  body {
-    font-size: 16px;
-  }
-  .main-nav {
-    display: none;
-  }
-  .logo {
-    height: 60px;
-    padding-left: 10px;
-  }
-  .__1-2 {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 300px;
-    flex: 0 0 300px;
-  }
-  .steps-box:first-child {
-    text-align: center;
-  }
-  .hero-text-box {
-    display: none;
-  }
+@media (max-width: 575.98px) {
   .social-links {
     margin-top: 10px;
     text-align: center;
@@ -630,52 +734,15 @@ footer p {
     display: inline-block;
     margin-right: 10px;
   }
-  .contact-form {
-    max-width: 80%;
+  footer {
+    padding: 40px 10px;
   }
-  .steps-box:last-child {
-    margin-top: 40px;
+  footer .__flex {
+    justify-content: center;
+    text-align: center;
   }
-  .works-step {
-    margin-bottom: 25px;
-  }
-  .works-step:last-of-type {
-    margin-bottom: 40px;
-  }
-  section {
-    padding: 40px 0;
-  }
-
-  .works-step div {
-    width: 40px;
-    height: 40px;
-  }
-  .btn-app img {
-    height: 41px;
-    width: auto;
-  }
-  .form-absolute {
-    width: 300px;
-    right: 9%;
-    top: 10px;
-  }
-  .contact-form {
-    padding: 0px;
-  }
-
-  .__1-form {
-    flex: 0 0 200px;
-    margin: 10px 0 10px 0;
-  }
-  .__2-form {
-    flex: 0 0 220px;
-    margin: 10px 0 10px 0;
-  }
-  .__2-form .btn {
-    margin-left: 50px;
-  }
-  .map {
-    height: 630px;
+  footer .__1-2 {
+    flex: 0 0 400px;
   }
 }
 
@@ -700,4 +767,20 @@ footer p {
 .js--wp-2.animated,
 .js--wp-3.animated {
   opacity: 1;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
